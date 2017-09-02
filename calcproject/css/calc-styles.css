@@ -1,0 +1,98 @@
+body{
+    background-color: black;
+    background-size: cover;
+}
+
+#calculator{
+    width: 350px;
+    height: 450px;
+    border-radius: 15px;
+    margin: 150 auto;
+    padding-left: 33px;
+    text-align: center;
+    box-shadow: 2px 75px 29px darkred;
+    background: -moz-linear-gradient(45deg, #050505 0%, #434343 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, #434343 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #050505 0%, #434343 100%);    
+    transform: rotateX(45deg) rotateY(5deg) rotateZ(-35deg);
+    font-family: 'VT323', monospace;
+}
+
+#window{
+	width: 200px;
+	height: 80px;
+	border: .5px groove blue;
+	margin-left: 16.5%;
+    word-wrap: break-word;
+    overflow: auto;
+    color: lime;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+#clear{
+    background: -moz-linear-gradient(45deg, #050505 0%, red 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, red 100%); 
+    background: linear-gradient(45deg, #050505 0%, red 100%);	
+    color: white;
+    padding-bottom: 24.5px;
+}
+
+#clear:hover{
+    background: -moz-linear-gradient(45deg, #050505 0%, white 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, white 100%); 
+    background: linear-gradient(45deg, #050505 0%, white 100%);   
+    color: red;
+}
+
+.numbers{
+	float:left;
+    width: 30%;
+    font-family: 'VT323', monospace;
+    padding-top: 17px;
+    font-size: 30px;
+    background: -moz-linear-gradient(45deg, #050505 0%, silver 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, silver 100%); 
+    background: linear-gradient(45deg, #050505 0%, metal 100%);
+    color: blue;
+    border: none;
+}
+
+.numbers:hover{
+    float:left;
+    width: 30%;
+    font-family: 'VT323', monospace;
+    padding-top: 17px;
+    font-size: 30px;
+    background: -moz-linear-gradient(45deg, #050505 0%, blue 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, blue 100%); 
+    background: linear-gradient(45deg, #050505 0%, blue 100%);
+    color: black;
+    border: none;
+}
+
+.ops{
+	float:left;
+    width: 30%;
+    padding-bottom: 5%; 
+    background: -moz-linear-gradient(45deg, #050505 0%, blue 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, blue 100%); 
+    background: linear-gradient(45deg, #050505 0%, blue 100%);    
+    color: black;
+    font-size: 27px;
+    border: none;
+    font-family: 'VT323', monospace;
+}
+
+.ops:hover{
+	float:left;
+    width: 30%;
+    padding-bottom: 5%;
+    background: -moz-linear-gradient(45deg, #050505 0%, black 100%); 
+    background: -webkit-linear-gradient(45deg, #050505 0%, black 100%); 
+    background: linear-gradient(45deg, #050505 0%, black 100%); 
+    color: blue;
+    font-size: 27px;
+}
+

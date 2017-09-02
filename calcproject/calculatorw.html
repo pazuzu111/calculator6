@@ -1,0 +1,154 @@
+<html>
+<head>
+	<title>white glow calculator</title>
+ 	
+ 	<link rel="stylesheet" type="text/css" href="css/calc-styles.css">
+ 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<!--	calculator frame    -->
+	<div id="calculator">
+
+	<!-- 	result window    -->		
+		<div id="window"></div>
+
+							<!-- buttons -->
+		<button class="numbers" value="1" onclick="play()">1</button>
+		<button class="numbers" value="2" onclick="play()">2</button>
+		<button class="numbers" value="3" onclick="play()">3</button>
+		<button class="numbers" value="4" onclick="play()">4</button>
+		<button class="numbers" value="5" onclick="play()">5</button>
+		<button class="numbers" value="6" onclick="play()">6</button>
+		<button class="numbers" value="7" onclick="play()">7</button>
+		<button class="numbers" value="8" onclick="play()">8</button>
+		<button class="numbers" value="9" onclick="play()">9</button>
+		<button class="numbers" value="0" onclick="play()">0</button>
+		<button class="numbers" value="." onclick="play()">.</button>
+		<button class="numbers" value=" " onclick="play()">+ avg</button>
+
+						<!-- clear button -->
+		<button id="clear" class="numbers" value="">C</button>
+
+
+						<!-- operators -->
+		<button class="ops" value="+">+</button>
+		<button class="ops" value="-">-</button>
+		<button class="ops" value="*">x</button>
+		<button class="ops" value="/">/</button>
+		<button id="equals" class="ops" onclick="play()">=</button>
+		<button id="AVG" class="ops">AVG</button>
+		<button id="stupid" class="ops" value="hello stupid">stupid</button>
+	</div>
+
+					<!-- audio source -->
+	<audio id="audio" src="media/voice.wav"></audio>
+    
+    <script>
+
+    //play function
+    function play() {
+          var sound = document.getElementById("audio");
+          sound.play()
+      }
+    </script>
+    				<!-- end of audio source -->
+
+
+
+<!--*********** jquery functions for the calculations ************-->
+<script>
+
+//holder for buttons clicked
+var a = "";
+
+//accumulator for the average function
+var sum = "";
+
+//output initial statement to the result window
+$('#window').html("Hello stupid");
+
+//when numbers or operators are clicked
+$(".numbers, .ops").click(function() {
+
+	//store the button value in a & sum
+	a += this.value;	
+	sum += this.value;
+
+	//output a to the result window 
+	$('#window').html(a);
+});
+
+//*****************************************************************
+
+//when the equal sign is clicked
+$('#equals').click(function() {
+
+	//evaluate a and store it 
+	a = eval(a)
+
+	//output a to result window
+	$('#window').html(a);
+});
+
+//*****************************************************************
+
+//when the clear button is clicked 
+$("#clear").click(function() {
+
+	//initialize the variables 
+	a = "";
+	sum = "";
+
+	//output 0 to result window
+	$('#window').html(0);
+});
+
+//*****************************************************************
+
+//when the average button is clicked
+$("#AVG").click(function(){
+
+	//split the sum values by every space and assign to sum
+	sum = sum.split(' ');
+
+	//find the length of sum and assign to arrLength
+	var arrLength = sum.length;
+
+	//add the values in sum and reassign
+	sum = eval(sum.join('+'));
+	
+	//divide the sum by arrLength to get the average
+	var avg = sum/arrLength;
+
+	//output the average to reusult window
+	$('#window').html(avg);
+
+});
+
+//*****************************************************************
+
+//when the stupid button is clicked 
+$('#stupid').click(function() {
+	
+	//initialize variables
+	a = "";
+	sum = "";
+
+	//clear the result window
+    $('#window').html(0);
+	
+	//output hello stupid to result window
+	$('#window').html("hello stupid");
+});
+
+</script>
+
+<!--**************** end of jquery functions ******************-->
+
+</body>
+</html>
